@@ -37,33 +37,6 @@ namespace GameSonic
                 }
 
                 berekening(i);
-                //if (_sonic2.Positie.Y > 950)
-                //{
-                //    _sonic2.Positie = S.spawning;
-                //    //1leven minder
-                //    //Game1.Hart[0].Positie.X = 5;
-                //    //Game1.Hart[1].Positie.X = 37;
-                //    //Game1.Hart[2].Positie.X = 74;
-                //    for(int j= 0; j<Game1.Hart.Count; j++)
-                //    {
-                //        if (i == 0 && Game1.Hart != null)
-                //            Game1.Hart[j].Positie.X = 5;
-                //        if (j == 1)
-                //            Game1.Hart[j].Positie.X = 37;
-                //        if (j == 2)
-                //            Game1.Hart[j].Positie.X = 74;
-                //    }
-                //    if (Game1.Hart != null)
-                //    {
-                //        i++;
-                //        if (i < Game1.Hart.Count)
-                //        {
-                //            Game1.Hart.RemoveAt(i - 1);
-                //        }
-                //        else
-                //            Environment.Exit(0);
-                //    }
-                //}
             }
             _sonic2.springen = true;
             return false;

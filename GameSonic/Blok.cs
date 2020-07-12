@@ -17,11 +17,6 @@ namespace GameSonic
         public Texture2D _texture { get; set; }
         public Rectangle Positie { get; set; }
 
-        public Blok()
-        {
-
-        }
-
         public Blok(/*Texture2D texture, Vector2 pos*/ Rectangle R)
         {
             Item1 = Content.Load<Texture2D>("blok");

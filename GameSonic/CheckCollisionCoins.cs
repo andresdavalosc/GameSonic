@@ -33,7 +33,6 @@ namespace GameSonic
                     {
                         _coinseffect.Play();
                         Game1._Coins.RemoveAt(j);
-                        //collideObjecten.RemoveAt(j);
                         System.Console.WriteLine("Collision coin");
                         count++;
                     }

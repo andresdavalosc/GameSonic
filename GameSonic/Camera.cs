@@ -26,7 +26,6 @@ namespace GameSonic
 
         public void Update(Vector2 position, int i, int j)
         {
-            //public void Update(Vector2 position, int i, int j)
             if (position.X < view.Width/2)
                 centre.X = view.Width / 2;
             if (position.X > view.Width+i)

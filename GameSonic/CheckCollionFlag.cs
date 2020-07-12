@@ -16,7 +16,7 @@ namespace GameSonic
         public bool CheckCollisionflag(Sonichero sonic)
         {
             _sonic2 = sonic;
-            level2 = new Level();
+            level2 = new Level(); // moet weg deze klasse mag geen nieuwe wereld maken
             Spawn S = new Spawn();
             CheckCollisionBlock dood = new CheckCollisionBlock();
             for (int i = 0; i < Game1._vlag.Count; i++)

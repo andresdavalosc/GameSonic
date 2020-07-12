@@ -21,22 +21,11 @@ namespace GameSonic
         {
             Item = Content.Load<Texture2D>("coin");
             _ShowRect = newRectangle;
-            //Position = new Vector2(200, 360);
             ShowSprite = new Rectangle(0, 0, 35,37);
             CollisionRectangle = new Rectangle(_ShowRect.X,_ShowRect.Y, ShowSprite.Width, ShowSprite.Height);
 
-            //coinSprite = new SpriteCoinCollected(ShowSprite);
         }
 
-
-        //public Coins(Texture2D _texture)
-        //{
-        //    _Coin = _texture;
-        //    //_ShowRect = new Rectangle(0, 0, 37, 35);
-        //    CollisionRectangle = new Rectangle((int)Positie.X, (int)Positie.Y,ShowSprite.Height,ShowSprite.Width);
-
-
-        //}
 
 
         public override void update(GameTime gameTime)
