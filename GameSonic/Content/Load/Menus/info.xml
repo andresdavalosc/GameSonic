@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Axis>Y</Axis>
+  <Effects>FadeEffect</Effects>
+  <Item>
+      <LinkType>BACK</LinkType>
+      <LinkID>Content/Load/Menus/TitleMenu.xml</LinkID>
+    <Image>
+      <Text>BACK</Text>
+      <Scale>
+        <X>3.0</X>
+        <Y>3.0</Y>
+      </Scale>
+    </Image>
+  </Item>
+  <Item>
+    <Image>
+      <Text>eerste level: Zo snel mogelijk 10 coins halen binnen de 10 seconden anders verlies je 1 leven </Text>
+    </Image>
+  </Item>
+  <Item>
+    <Image>
+      <Text>tweede level: Zo snel mogelijk 20 coins halen binnen de 10 seconden anders verlies je 1 leven </Text>
+    </Image>
+  </Item>
+
+</Menu>

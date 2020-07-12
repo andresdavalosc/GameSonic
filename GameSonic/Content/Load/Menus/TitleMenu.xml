@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Axis>Y</Axis>
+  <Effects>FadeEffect</Effects>
+  <Item>
+    <LinkType>Screen</LinkType>
+    <LinkID>GameStart</LinkID>
+    <Image>
+      <Text>New Game</Text>
+      <Scale>
+        <X>2.5</X>
+        <Y>2.5</Y>
+      </Scale>
+    </Image>
+  </Item>
+  <Item>
+    <LinkType>info</LinkType>
+    <LinkID>Content/Load/Menus/info.xml</LinkID>
+    <Image>
+      <Text>Info</Text>
+      <Scale>
+        <X>2.5</X>
+        <Y>2.5</Y>
+      </Scale>
+    </Image>
+  </Item>
+</Menu>

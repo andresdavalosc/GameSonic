@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SplashScreen>
+  <Image>
+    <Path>SplashScreen/sonic</Path>
+    <Effects>FadeEffect</Effects>
+    <IsActive>true</IsActive>
+    <Alpha>0.9</Alpha>
+    <FadeSpeed>0.5</FadeSpeed>
+    <Position>
+      <X>520</X>
+      <Y>300</Y>
+    </Position>
+    <Scale>
+      <X>2.0</X>
+      <Y>2.0</Y>
+    </Scale>
+  </Image>
+</SplashScreen>
