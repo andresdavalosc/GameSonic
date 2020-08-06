@@ -10,20 +10,20 @@ namespace GameSonic
     {
         
 
-        // public  static void worlds(bool sonicworld)
-        //{
-        //    Level _level;
-        //    _level = new Level();
-        //    if (sonicworld == true)
-        //    {
-        //        _level.CreateWorld(Level2);
-        //    }
-        //    else if (sonicworld == false)
-        //    {
-        //        _level.CreateWorld(Level1);
+         public  static void worlds(bool sonicworld)
+        {
+            Level _level;
+            _level = new Level();
+            if (sonicworld == true)
+            {
+                _level.CreateWorld(Level2);
+            }
+            else if (sonicworld == false)
+            {
+                _level.CreateWorld(Level1);
 
-        //    }
-        //}
+            }
+        }
         public static  byte[,] Level1 = new byte[,]
         {
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},

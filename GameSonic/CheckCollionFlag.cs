@@ -33,8 +33,8 @@ namespace GameSonic
                             World.worlds(true);
 
                             
-                            level2.CreateWorld(world2.Level2);
-                            _sonic2.Positie = S.spawning;
+                            //level2.CreateWorld(world2.Level2);
+                            //_sonic2.Positie = S.spawning;
                             level = 2;
                         }
 
