@@ -8,8 +8,23 @@ namespace GameSonic
 {
     class World
     {
+        
 
-        public byte[,] Level1 = new byte[,]
+        // public  static void worlds(bool sonicworld)
+        //{
+        //    Level _level;
+        //    _level = new Level();
+        //    if (sonicworld == true)
+        //    {
+        //        _level.CreateWorld(Level2);
+        //    }
+        //    else if (sonicworld == false)
+        //    {
+        //        _level.CreateWorld(Level1);
+
+        //    }
+        //}
+        public static  byte[,] Level1 = new byte[,]
         {
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -27,7 +42,7 @@ namespace GameSonic
             {1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,1,1,1,1,0,0,1,1},
         };
         //next level
-        public byte[,] Level2 = new Byte[,]
+        public static  byte[,] Level2 = new Byte[,]
        {
            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,33,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,33,0},

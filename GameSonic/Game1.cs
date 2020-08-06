@@ -97,9 +97,6 @@ namespace GameSonic
             Hart2 = new Levens(hearth, new Vector2(37, 0));
             Hart3 = new Levens(hearth, new Vector2(74, 0));
             _sonic._bediening = new BedieningPijltjes();
-            Hart1._bediening = new BedieningPijltjes();
-            Hart2._bediening = new BedieningPijltjes();
-            Hart3._bediening = new BedieningPijltjes();
             
             //blokText = Content.Load<Texture2D>("blok");
             sky = Content.Load<Texture2D>("space");
@@ -113,7 +110,8 @@ namespace GameSonic
             checkcoin = new CheckCollisionCoins();
             checkblock = new CheckCollisionBlock();
             level.texture = blokText;
-            level.CreateWorld(world.Level1);
+            //level.CreateWorld(world.Level1);
+            World.worlds(false);
             ScreenManager.Instance.GraphicsDevice = GraphicsDevice;
             ScreenManager.Instance.SpriteBatch = spriteBatch;
             ScreenManager.Instance.LoadContent(Content);
@@ -183,10 +181,12 @@ namespace GameSonic
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, Camera.transform);
             spriteBatch.Draw(sky, new Vector2(0, 0), Color.White);
+            ScreenManager.Instance.Draw(spriteBatch);
+
             //if (img.IsActive == false)
             //{
-                //_sonic.Draw(spriteBatch);
-                _flag.Draw(spriteBatch);
+            //_sonic.Draw(spriteBatch);
+            _flag.Draw(spriteBatch);
                 checkcoin.Draw(spriteBatch, font, Hart3);
                 foreach (Levens H in Hart)
                 {
@@ -200,7 +200,7 @@ namespace GameSonic
         //}
             //else
             //{
-                ScreenManager.Instance.Draw(spriteBatch);
+                
         //}
         spriteBatch.End();
             base.Draw(gameTime);

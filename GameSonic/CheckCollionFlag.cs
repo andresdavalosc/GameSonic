@@ -8,7 +8,7 @@ namespace GameSonic
 {
     class CheckCollionFlag
     {
-        Level level2;
+       /Level level2;
         World world2 = new World();
         Sonichero _sonic2,hero;
         public static int level=1;
@@ -30,6 +30,9 @@ namespace GameSonic
                         {
                             Game1._Blok.Clear();
                             Game1._Coins.Clear();
+                            World.worlds(true);
+
+                            
                             level2.CreateWorld(world2.Level2);
                             _sonic2.Positie = S.spawning;
                             level = 2;
