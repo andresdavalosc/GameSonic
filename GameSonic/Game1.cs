@@ -78,7 +78,7 @@ namespace GameSonic
         {
             S = new Spawn();
             Collect.Content = Content;
-            SonicHelper.Content = Content;
+            Helper.Content = Content;
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             hero1 = Content.Load<Texture2D>("sanic");

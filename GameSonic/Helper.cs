@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GameSonic
 {
-    abstract class SonicHelper
+    abstract class Helper
     {
         public static ContentManager Content;
         public Texture2D Item1;

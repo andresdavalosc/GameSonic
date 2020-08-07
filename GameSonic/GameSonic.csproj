@@ -69,7 +69,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenManager.cs" />
-    <Compile Include="SonicHelper.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Sonichero.cs" />
     <Compile Include="Spawn.cs" />
     <Compile Include="SplashScreen.cs" />

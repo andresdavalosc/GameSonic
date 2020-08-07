@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GameSonic
 {
-    class Blok : SonicHelper,ICollide
+    class Blok : Helper,ICollide
     {
         public Rectangle CollisionRectangle;
         public Rectangle R;
