@@ -24,13 +24,13 @@ namespace GameSonic
             view = newView;
         }
 
-        public void Update(Vector2 position, int i, int j)
+        public void Update(Vector2 position)
         {
             if (position.X < view.Width/2)
                 centre.X = view.Width / 2;
-            if (position.X > view.Width+i)
-                centre.X = view.Width+i;
-            else if (position.X > (view.Width / 2))
+            //if (position.X > view.Width+i)
+            //    centre.X = view.Width+i;
+            else if (position.X > (view.Width / 2) && position.X < view.Width -400)
                 centre = new Vector2(position.X, 0);
             transform = Matrix.CreateTranslation(new Vector3(-centre.X + (view.Width / 2), 0, 0));
         }

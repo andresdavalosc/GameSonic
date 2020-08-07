@@ -10,7 +10,7 @@ namespace GameSonic
     {
         
 
-         public  static void worlds(bool sonicworld)
+         public   void worlds(bool sonicworld)
         {
             Level _level;
             _level = new Level();
@@ -24,7 +24,7 @@ namespace GameSonic
 
             }
         }
-        public static  byte[,] Level1 = new byte[,]
+        public   byte[,] Level1 = new byte[,]
         {
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},

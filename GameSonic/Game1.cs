@@ -111,7 +111,7 @@ namespace GameSonic
             checkblock = new CheckCollisionBlock();
             level.texture = blokText;
             //level.CreateWorld(world.Level1);
-            World.worlds(false);
+            world.worlds(false);
             ScreenManager.Instance.GraphicsDevice = GraphicsDevice;
             ScreenManager.Instance.SpriteBatch = spriteBatch;
             ScreenManager.Instance.LoadContent(Content);
@@ -160,11 +160,11 @@ namespace GameSonic
             checkcoin.update(gameTime,coinseffect);
            if(level != null)
             {
-                Camera.Update(_sonic.Positie, level.Width, level.Height);
+                Camera.Update(_sonic.Positie);
             }
            else if(level2 != null)
             {
-                Camera.Update(_sonic.Positie, level2.Width, level2.Height);
+                Camera.Update(_sonic.Positie);
             }
             tijd.Update(gameTime,_sound);
             ScreenManager.Instance.Update(gameTime);

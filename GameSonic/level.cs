@@ -10,7 +10,7 @@ namespace GameSonic
 {
     class Level
     {
-        private int width, height;
+        public int width, height;
 
         public int Width
         {
