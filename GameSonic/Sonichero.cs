@@ -16,9 +16,10 @@ namespace GameSonic
     {
 
         ContentManager Content;
+        bool flag = false;
         private Texture2D _hero1;
         public  bool springen;
-        public Vector2 Positie;
+        public static Vector2 Positie;
         public Rectangle _ShowRect;
         public Rectangle CollisionRectangle;
         public Game1 g = new Game1();
@@ -37,8 +38,6 @@ namespace GameSonic
         }
         public void LoadContent()
         {
-            
-
 
         }
 
@@ -53,34 +52,49 @@ namespace GameSonic
             {
                 _bediening.Update();
 
-
-                if (_bediening.left)
-                // _animation.Update(gameTime);
+                if (_bediening.pauze)
                 {
-                    _ShowRectangle.X -= 84;
-                    Positie -= VelocityX;
-                    if (_ShowRectangle.X < 0)
-                        _ShowRectangle.X = 672;
-
-                }
-                if (_bediening.right)
-                // _animation.Update(gameTime);
-                {
-                    _ShowRectangle.X += 84;
-                    Positie += VelocityX;
-                    if (_ShowRectangle.X > 1668)
-                        _ShowRectangle.X = 840;
-
+                    Gepauzeerd.gepauzeerd = !Gepauzeerd.gepauzeerd;
+                    flag = true;
                 }
 
-                if (_bediening.spatie && springen == false)
+                if (_bediening.hervat)
                 {
-                    Positie.Y -= 80;
-                    Velocity.Y = -9f;
-                    springen = true;
-                    //effect.Play();
-                    System.Console.WriteLine("lucht collison");
+                    Gepauzeerd.gepauzeerd = false;
+                    flag = false;
                 }
+
+                if (!flag)
+                {
+                    if (_bediening.left)
+                    // _animation.Update(gameTime);
+                    {
+                        _ShowRectangle.X -= 84;
+                        Positie -= VelocityX;
+                        if (_ShowRectangle.X < 0)
+                            _ShowRectangle.X = 672;
+
+                    }
+                    if (_bediening.right)
+                    // _animation.Update(gameTime);
+                    {
+                        _ShowRectangle.X += 84;
+                        Positie += VelocityX;
+                        if (_ShowRectangle.X > 1668)
+                            _ShowRectangle.X = 840;
+
+                    }
+
+                    if (_bediening.spatie && springen == false)
+                    {
+                        Positie.Y -= 80;
+                        Velocity.Y = -9f;
+                        springen = true;
+                        //effect.Play();
+                        System.Console.WriteLine("lucht collison");
+                    }
+                }
+                
 
                 if (springen == true)
                 {

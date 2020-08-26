@@ -12,10 +12,6 @@ namespace GameSonic
     public class GameStart : GameScreen
     {
 
-        Sonichero Sonic ;
-        Texture2D Content;
-        //Game1 g = new Game1();
-        Spawn s = new Spawn();
         public override void LoadContent()
         {
             base.LoadContent();            

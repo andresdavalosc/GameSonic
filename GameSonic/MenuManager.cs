@@ -12,7 +12,7 @@ namespace GameSonic
     public class MenuManager
     {
         Menu menu;
-
+        public static bool start = false;
         bool isTransistioning;
 
         void Transisition(GameTime gameTime)
@@ -78,6 +78,8 @@ namespace GameSonic
             {
                 if(menu.Items[menu.ItemNumber].LinkType == "Screen")
                 {
+                    start = true;
+                    Console.WriteLine(start);
                     ScreenManager.Instance.ChangeScreens(menu.Items[menu.ItemNumber].LinkID);
                 }
                 else

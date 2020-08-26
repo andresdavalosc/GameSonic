@@ -15,14 +15,11 @@ namespace GameSonic
         SpriteFont font;
         SoundEffect _Sound;
         public Levens L;
-        private Rectangle _ShowRect;
-        SpriteFont _font;
         int count = 0;
         CheckCollisionBlock aantalleven = new CheckCollisionBlock();
         CheckCollisionCoins check = new CheckCollisionCoins();
         String Bericht ="";
         Level level1 = new Level();
-        //Game1 g = new Game1();
         World w = new World();
 
 
@@ -36,7 +33,7 @@ namespace GameSonic
                 if (T >= 10 && CheckCollisionCoins.count < 10)
                 {
                     count = aantalleven.i__;
-                    if (count < 3 || Game1.Hart != null)
+                    if (count < 3 && Game1.Hart != null)
                     {
                         Game1.Hart.RemoveAt(count + 1);
                         T = 0;
@@ -46,6 +43,10 @@ namespace GameSonic
                     else if (count >= 2)
                     {
                         Environment.Exit(0);
+                    }
+                    else if (Game1.Hart == null || count <= 0)
+                    {
+                        Console.WriteLine("done");
                     }
                 }
                 else if (CheckCollisionCoins.count >= 10)
@@ -70,6 +71,10 @@ namespace GameSonic
                     {
                         Environment.Exit(0);
                     }
+                    else if (Game1.Hart == null)
+                    {
+                        Environment.Exit(0);
+                    }
                 }
                 else if (CheckCollisionCoins.count >= 20)
                 {
@@ -80,12 +85,12 @@ namespace GameSonic
 
         }
 
-        public void Draw(SpriteBatch spriteBatch , SpriteFont _font, Levens hart)
+        public void Draw(SpriteBatch spriteBatch , SpriteFont _font)
         {
             font = _font;
-            L = hart;
+            //L = hart;
 
-            spriteBatch.DrawString(font, Bericht ,new Vector2(L.Positie.X + 500,20) , Color.White);
+            spriteBatch.DrawString(font, Bericht ,new Vector2(Levens.Positie.X + 500,20) , Color.White);
         }
     }
 }

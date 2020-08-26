@@ -34,7 +34,7 @@ namespace GameSonic
 
 
                             //level2.CreateWorld(world2.Level2);
-                            _sonic2.Positie = S.spawning;
+                            Sonichero.Positie = S.spawning;
                             level = 2;
                         }
 

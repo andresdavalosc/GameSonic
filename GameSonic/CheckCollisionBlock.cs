@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace GameSonic
     {
         Sonichero _sonic2,H;
         Spawn S = new Spawn();
+        SoundEffect _Sound;
         Levens L;
         public int i__;
 
@@ -29,7 +31,7 @@ namespace GameSonic
                     {
                         if (Game1._Blok[j].GetCollisionRectangle().Top > Game1._Blok[j].GetCollisionRectangle().Bottom && Game1._Blok[j].GetCollisionRectangle().Left < Game1._Blok[j].GetCollisionRectangle().Right)
                         {
-                            _sonic2.Positie.X = 0;
+                            Sonichero.Positie.X = 0;
                         }
                             _sonic2.springen = false;
                         return true;
@@ -42,18 +44,21 @@ namespace GameSonic
             return false;
         }
 
-        public void update(GameTime gameTime , Sonichero _son)
+        public void update(GameTime gameTime , Sonichero _son, SoundEffect sound)
         {
             H = _son;
             CheckCollision(H);
+            _Sound = sound;
         }
 
         public void berekening(int _i)
         {
             i__ = _i;
-            if (_sonic2.Positie.Y > 950)
+            if (Sonichero.Positie.Y > 950)
             {
-                _sonic2.Positie = S.spawning;
+                
+                _Sound.Play();
+                Sonichero.Positie = S.spawning;
                 
                 if (Game1.Hart != null)
                 {

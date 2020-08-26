@@ -12,7 +12,7 @@ namespace GameSonic
     {
 
         private Texture2D _hart;
-        public Vector2 Positie;
+        public static Vector2 Positie;
         private Rectangle _ShowRect;
         SpriteFont _font;
         public int count;
@@ -30,16 +30,6 @@ namespace GameSonic
 
         public void Update()
         {
-            //_bediening.Update();
-
-            //if (_bediening.right)
-            //{
-            //    Positie.X +=4;
-            //}
-            //if (_bediening.left)
-            //{
-            //    Positie.X -= 4;
-            //}
             count = Game1.Hart.Count;
             Positie.X = Camera.centre.X-700;
             

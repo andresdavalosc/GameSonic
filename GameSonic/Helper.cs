@@ -14,8 +14,6 @@ namespace GameSonic
     {
         public static ContentManager Content;
         public Texture2D Item1;
-        public Vector2 Position;
-        public Rectangle ShowSprite;
 
 
         public abstract void update();

@@ -13,7 +13,8 @@ namespace GameSonic
     /// </summary>
     public class Game1 : Game
     {
-        Image img = new Image();
+        public Bediening _bediening { get; set; }
+        MenuManager m = new MenuManager();
         Timer tijd = new Timer();
         SoundEffect _sound;
         GraphicsDeviceManager graphics;
@@ -21,7 +22,7 @@ namespace GameSonic
         CheckCollisionBlock checkblock;
         CheckCollionFlag checkFlag = new CheckCollionFlag();
         World world = new World();
-        SpriteFont font;
+        public static SpriteFont font;
         SpriteBatch spriteBatch;
         public static Sonichero _sonic ;
         Vlag _flag;
@@ -136,38 +137,44 @@ namespace GameSonic
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-           // _sonic.Update(effect);
+            // _sonic.Update(effect);
+            ScreenManager.Instance.Update(gameTime);
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-              Exit();
-            foreach (Coins C in _Coins)
+                Exit();
+            if (!Gepauzeerd.gepauzeerd)
             {
-                C.update(gameTime);
-
-            }
-            foreach (Blok B in _Blok)
-            {
-                B.update();
-            }
-            foreach (Levens H in Hart)
-            {
-                if (H != null)
+                    foreach (Coins C in _Coins)
                 {
-                    H.Update();
+                    C.update(gameTime);
+
+                }
+                foreach (Blok B in _Blok)
+                {
+                    B.update();
+                }
+                foreach (Levens H in Hart)
+                {
+                    if (H != null)
+                    {
+                        H.Update();
+                    }
+                }
+                checkFlag.update(_sonic);
+                checkblock.update(gameTime, _sonic,_sound);
+                checkcoin.update(gameTime, coinseffect);
+                if (level != null)
+                {
+                    Camera.Update(Sonichero.Positie);
+                }
+                else if (level2 != null)
+                {
+                    Camera.Update(Sonichero.Positie);
+                }
+                if (MenuManager.start)
+                {
+                    tijd.Update(gameTime, _sound);
                 }
             }
-            checkFlag.update(_sonic);
-            checkblock.update(gameTime,_sonic);
-            checkcoin.update(gameTime,coinseffect);
-           if(level != null)
-            {
-                Camera.Update(_sonic.Positie);
-            }
-           else if(level2 != null)
-            {
-                Camera.Update(_sonic.Positie);
-            }
-            tijd.Update(gameTime,_sound);
-            ScreenManager.Instance.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -182,12 +189,12 @@ namespace GameSonic
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, Camera.transform);
             spriteBatch.Draw(sky, new Vector2(0, 0), Color.White);
             ScreenManager.Instance.Draw(spriteBatch);
-
-            //if (img.IsActive == false)
-            //{
-            //_sonic.Draw(spriteBatch);
-            _flag.Draw(spriteBatch);
-                checkcoin.Draw(spriteBatch, font, Hart3);
+            if(MenuManager.start)
+            {
+                
+                _sonic.Draw(spriteBatch);
+                _flag.Draw(spriteBatch);
+                checkcoin.Draw(spriteBatch, font);
                 foreach (Levens H in Hart)
                 {
                     if (H != null)
@@ -196,13 +203,16 @@ namespace GameSonic
                     }
                 }
                 level.DrawWorld(spriteBatch);
-            tijd.Draw(spriteBatch,font,Hart3);
-        //}
-            //else
-            //{
+                tijd.Draw(spriteBatch, font);
+
                 
-        //}
-        spriteBatch.End();
+            }
+            if (Gepauzeerd.gepauzeerd)
+            {
+                Gepauzeerd g = new Gepauzeerd();
+                g.Draw(spriteBatch);
+            }
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

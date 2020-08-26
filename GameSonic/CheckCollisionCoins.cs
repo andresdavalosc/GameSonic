@@ -43,12 +43,12 @@ namespace GameSonic
             return false;
         }
 
-        public  void Draw(SpriteBatch spriteBatch, SpriteFont font, Levens hart)
+        public  void Draw(SpriteBatch spriteBatch, SpriteFont font)
         {
             _font = font;
-            L = hart;
+            //L = hart;
             
-           spriteBatch.DrawString(_font, "coins: " + count, new Vector2(L.Positie.X + 50, 0), Color.Yellow);
+           spriteBatch.DrawString(_font, "coins: " + count, new Vector2(Levens.Positie.X + 50, 0), Color.Yellow);
         }
 
         public  void update(GameTime gametime, SoundEffect effect)

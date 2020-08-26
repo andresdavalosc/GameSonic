@@ -12,6 +12,8 @@ namespace GameSonic
         public bool left { get; set; }
         public bool right { get; set; }
         public bool spatie { get; set; }
+        public bool pauze { get; set; }
+        public bool hervat { get; set; }
         public abstract void Update();
     }
 
@@ -46,6 +48,22 @@ namespace GameSonic
             if (stateKey.IsKeyUp(Keys.Space))
             {
                 spatie = false;
+            }
+            if (stateKey.IsKeyUp(Keys.A))
+            {
+                pauze = false;
+            }
+            if (stateKey.IsKeyDown(Keys.A))
+            {
+                pauze = true;
+            }
+            if (stateKey.IsKeyUp(Keys.B))
+            {
+                hervat = false;
+            }
+            if (stateKey.IsKeyDown(Keys.B))
+            {
+                hervat = true;
             }
         }
 
