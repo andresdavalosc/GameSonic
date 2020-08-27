@@ -13,20 +13,18 @@ namespace GameSonic
     public class SplashScreen : GameScreen
     {
         public Image Image;
-        public String Path;
-        Vector2 pos;
         public override void LoadContent()
         {
             base.LoadContent();
             Image.LoadContent();
-            //pos = new Vector2(550, 200);
         }
+
         public override void UnloadContent()
         {
             base.UnloadContent();
             Image.UnloadContent();
-            //Image.FadeEffect.FadeSpeed = 0.5f;
         }
+
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
@@ -37,6 +35,7 @@ namespace GameSonic
                 ScreenManager.Instance.ChangeScreens("TitleScreen");
             }
         }
+
         public override void Draw(SpriteBatch spriteBatch)
         {
             Image.Draw(spriteBatch);

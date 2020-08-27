@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,47 +9,30 @@ namespace GameSonic
 {
     class CheckCollionFlag
     {
-       //Level level2;
-        World world2 = new World();
-        Sonichero _sonic2,hero;
         public static int level=1;
         CheckCollisionCoins coins = new CheckCollisionCoins();
-        public bool CheckCollisionflag(Sonichero sonic)
+
+        public void Update(Sonichero _hero, SpriteBatch spriteBatch)
         {
-            _sonic2 = sonic;
-           // level2 = new Level(); // moet weg deze klasse mag geen nieuwe wereld maken
-            Spawn S = new Spawn();
-            CheckCollisionBlock dood = new CheckCollisionBlock();
+            CheckCollisionflag(spriteBatch);
+        }
+
+        public bool CheckCollisionflag(SpriteBatch spriteBatch)
+        {
             for (int i = 0; i < Game1._vlag.Count; i++)
             {
                 for (int j = i; j < Game1._vlag.Count; j++)
                 {
                     if (Game1.collideObjecten[0].GetCollisionRectangle().Intersects(Game1._vlag[j].GetCollisionRectangle()))
                     {
-                        
-                        if (CheckCollisionCoins.count >= 10)
-                        {
-                            Game1._Blok.Clear();
-                            Game1._Coins.Clear();
-                            world2.worlds(true);
 
-
-                            //level2.CreateWorld(world2.Level2);
-                            Sonichero.Positie = S.spawning;
-                            level = 2;
-                        }
+                        ControleCoins.Coinsmax(spriteBatch);
 
                     }
                 }
                 return true;
             }
             return false;
-        }
-
-        public void update(Sonichero _hero)
-        {
-            hero = _hero;
-            CheckCollisionflag(hero);
         }
 
     }

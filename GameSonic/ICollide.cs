@@ -10,6 +10,5 @@ namespace GameSonic
     public interface ICollide
     {
         Rectangle GetCollisionRectangle();
-
     }
 }

@@ -24,7 +24,14 @@
     <LinkType>BACK</LinkType>
     <LinkID>Content/Load/Menus/TitleMenu.xml</LinkID>
     <Image>
-      <Text>tweede level: Zo snel mogelijk 15 coins halen binnen de 10 seconden anders verlies je 1 leven </Text>
+      <Text>tweede level: Zo snel mogelijk 15 coins halen binnen de 15 seconden anders verlies je 1 leven </Text>
+    </Image>
+  </Item>
+  <Item>
+    <LinkType>BACK</LinkType>
+    <LinkID>Content/Load/Menus/TitleMenu.xml</LinkID>
+    <Image>
+      <Text>derde level: Zo snel mogelijk 1 coins halen binnen de 10 seconden anders verlies je 1 leven </Text>
     </Image>
   </Item>
 </Menu>

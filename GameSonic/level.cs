@@ -51,9 +51,9 @@ namespace GameSonic
         public void DrawWorld(SpriteBatch spritebatch)
         {
             foreach (Blok blokje in Game1._Blok)
-               blokje.draw(spritebatch);
+               blokje.Draw(spritebatch);
             foreach (Coins money in Game1._Coins)
-               money.draw(spritebatch);            
+               money.Draw(spritebatch);            
         }
 
     }

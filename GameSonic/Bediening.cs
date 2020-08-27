@@ -9,11 +9,11 @@ namespace GameSonic
 {
     public abstract class Bediening
     {
-        public bool left { get; set; }
-        public bool right { get; set; }
-        public bool spatie { get; set; }
-        public bool pauze { get; set; }
-        public bool hervat { get; set; }
+        public bool Left { get; set; }
+        public bool Right { get; set; }
+        public bool Spatie { get; set; }
+        public bool Pauze { get; set; }
+        public bool Hervat { get; set; }
         public abstract void Update();
     }
 
@@ -25,45 +25,45 @@ namespace GameSonic
 
             if (stateKey.IsKeyDown(Keys.Left))
             {
-                left = true;
+                Left = true;
             }
             if (stateKey.IsKeyUp(Keys.Left))
             {
-                left = false;
+                Left = false;
             }
 
             if (stateKey.IsKeyDown(Keys.Right))
             {
-                right = true;
+                Right = true;
             }
             if (stateKey.IsKeyUp(Keys.Right))
             {
-                right = false;
+                Right = false;
             }
 
             if (stateKey.IsKeyDown(Keys.Space))
             {
-                spatie = true;
+                Spatie = true;
             }
             if (stateKey.IsKeyUp(Keys.Space))
             {
-                spatie = false;
+                Spatie = false;
             }
             if (stateKey.IsKeyUp(Keys.A))
             {
-                pauze = false;
+                Pauze = false;
             }
             if (stateKey.IsKeyDown(Keys.A))
             {
-                pauze = true;
+                Pauze = true;
             }
             if (stateKey.IsKeyUp(Keys.B))
             {
-                hervat = false;
+                Hervat = false;
             }
             if (stateKey.IsKeyDown(Keys.B))
             {
-                hervat = true;
+                Hervat = true;
             }
         }
 

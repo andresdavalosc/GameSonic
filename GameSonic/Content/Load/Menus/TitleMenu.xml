@@ -24,4 +24,14 @@
       </Scale>
     </Image>
   </Item>
+  <Item>
+    <LinkType>Stop</LinkType>
+    <Image>
+      <Text>Quit</Text>
+      <Scale>
+        <X>2.5</X>
+        <Y>2.5</Y>
+      </Scale>
+    </Image>
+  </Item>
 </Menu>

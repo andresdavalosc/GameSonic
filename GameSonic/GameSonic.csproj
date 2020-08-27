@@ -65,9 +65,10 @@
     <Compile Include="CheckCollionFlag.cs" />
     <Compile Include="CheckCollisionBlock.cs" />
     <Compile Include="CheckCollisionCoins.cs" />
+    <Compile Include="CheckTijd.cs" />
     <Compile Include="Coins.cs" />
     <Compile Include="Collect.cs" />
-    <Compile Include="ContenManager.cs" />
+    <Compile Include="ControleCoins.cs" />
     <Compile Include="FadeEffect.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameScreen.cs" />
@@ -82,7 +83,7 @@
     <Compile Include="Menu.cs" />
     <Compile Include="MenuItem.cs" />
     <Compile Include="MenuManager.cs" />
-    <Compile Include="pauze.cs" />
+    <Compile Include="NieuwLevel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenManager.cs" />
@@ -92,6 +93,9 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="timer.cs" />
     <Compile Include="TitleScreen.cs" />
+    <Compile Include="toestenBesturing.cs" />
+    <Compile Include="VerwijderCoin.cs" />
+    <Compile Include="VerwijderHart.cs" />
     <Compile Include="Vlag.cs" />
     <Compile Include="World.cs" />
     <Compile Include="XmlManager.cs" />
@@ -104,7 +108,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Load\Menus\GameStart.xml" />
     <Content Include="Content\Load\Menus\info.xml" />
     <Content Include="Content\Load\ScreenManager.xml" />
     <Content Include="Content\Load\SplashScreen.xml" />

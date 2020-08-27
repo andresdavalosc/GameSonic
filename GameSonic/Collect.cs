@@ -13,13 +13,11 @@ namespace GameSonic
     {
         public static ContentManager Content;
         public Texture2D Item;
-        public Vector2 Position;
         public Rectangle ShowSprite;
 
+        public abstract void Update(GameTime gametime);
 
-        public abstract void update(GameTime gametime);
-
-        public abstract void draw(SpriteBatch spriteBatch);
+        public abstract void Draw(SpriteBatch spriteBatch);
 
     }
 }

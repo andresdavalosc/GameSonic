@@ -12,6 +12,7 @@ namespace GameSonic
     {
         protected Image image;
         public bool IsActive;
+
         public ImageEffect()
         {
             IsActive = false;
@@ -19,7 +20,7 @@ namespace GameSonic
 
         public virtual void LoadContent(ref Image Image)
         {
-            this.image = Image;
+            image = Image;
         }
 
         public virtual void UnloadContent()

@@ -15,19 +15,16 @@ namespace GameSonic
     public class Sonichero : ICollide
     {
 
-        ContentManager Content;
-        bool flag = false;
         private Texture2D _hero1;
-        public  bool springen;
+        public static bool springen;
         public static Vector2 Positie;
         public Rectangle _ShowRect;
-        public Rectangle CollisionRectangle;
-        public Game1 g = new Game1();
-        public Vector2 VelocityX = new Vector2(5, 0);
-        public Vector2 Velocity;
-        public SoundEffect effect;
+        public static Rectangle CollisionRectangle;
+        public static Vector2 VelocityX = new Vector2(5, 0);
+        public static Vector2 Velocity;
         public Bediening _bediening { get; set; }
-        Spawn S = new Spawn();
+
+
         public Sonichero(Texture2D _texture, Vector2 _positie)
         {
             _hero1 = _texture;
@@ -36,99 +33,32 @@ namespace GameSonic
             CollisionRectangle = new Rectangle((int)Positie.X, (int)Positie.Y, 86, 100);
             springen = true;
         }
+
         public void LoadContent()
         {
-
         }
 
         public void UnloadContent()
         {
         }
+
         public void Update(GameTime gametime)
         {
-            
             Positie += Velocity;
-            if (_bediening != null)
-            {
-                _bediening.Update();
-
-                if (_bediening.pauze)
-                {
-                    Gepauzeerd.gepauzeerd = !Gepauzeerd.gepauzeerd;
-                    flag = true;
-                }
-
-                if (_bediening.hervat)
-                {
-                    Gepauzeerd.gepauzeerd = false;
-                    flag = false;
-                }
-
-                if (!flag)
-                {
-                    if (_bediening.left)
-                    // _animation.Update(gameTime);
-                    {
-                        _ShowRectangle.X -= 84;
-                        Positie -= VelocityX;
-                        if (_ShowRectangle.X < 0)
-                            _ShowRectangle.X = 672;
-
-                    }
-                    if (_bediening.right)
-                    // _animation.Update(gameTime);
-                    {
-                        _ShowRectangle.X += 84;
-                        Positie += VelocityX;
-                        if (_ShowRectangle.X > 1668)
-                            _ShowRectangle.X = 840;
-
-                    }
-
-                    if (_bediening.spatie && springen == false)
-                    {
-                        Positie.Y -= 80;
-                        Velocity.Y = -9f;
-                        springen = true;
-                        //effect.Play();
-                        System.Console.WriteLine("lucht collison");
-                    }
-                }
-                
-
-                if (springen == true)
-                {
-                    float i = 2;
-                    Velocity.Y += 0.15f * i;
-                }
-
-                if (springen == false)
-                {
-                    Velocity.Y = 0f;
-                }
-
-                if (!_bediening.right && !_bediening.left && !_bediening.spatie)
-                {
-                    _ShowRectangle.X = 840;
-
-                }
-                CollisionRectangle.X = (int)Positie.X;
-                CollisionRectangle.Y = (int)Positie.Y;
-            }
-            
-
+            ToestenBesturing.ToetsenBediening(_bediening);
         }
-        Rectangle _ShowRectangle = new Rectangle(840, 0, 84, 93);
+        public static Rectangle _ShowRectangle = new Rectangle(840, 0, 84, 93);
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
             spriteBatch.Draw(_hero1, Positie, _ShowRectangle, Color.AliceBlue);
         }
+
         public Rectangle GetCollisionRectangle()
         {
             return CollisionRectangle;
         }
+        
     }
 }
    

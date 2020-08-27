@@ -13,7 +13,7 @@ namespace GameSonic
 {
     public class Menu
     {
-        public event EventHandler onMenuChange;
+        public event EventHandler OnMenuChange;
         public string Axis;
         public string Effects;
         [XmlElement("Item")]
@@ -45,7 +45,7 @@ namespace GameSonic
             set
             {
                 id = value;
-                onMenuChange(this, null);
+                OnMenuChange(this, null);
             }
         }
 

@@ -11,16 +11,9 @@ namespace GameSonic
     
     class CheckCollisionBlock
     {
-        Sonichero _sonic2,H;
-        Spawn S = new Spawn();
-        SoundEffect _Sound;
-        Levens L;
-        public int i__;
 
-
-        public bool CheckCollision(Sonichero hero)
+        public bool CheckCollision()
         {
-            _sonic2=hero;
 
             for (int i = 0; i < Game1._Blok.Count; i++)
             {
@@ -33,45 +26,23 @@ namespace GameSonic
                         {
                             Sonichero.Positie.X = 0;
                         }
-                            _sonic2.springen = false;
+                            Sonichero.springen = false;
                         return true;
                     }
                 }
 
-                berekening(i);
+                VerwijderHart.UpdateHart(i);
             }
-            _sonic2.springen = true;
+            Sonichero.springen = true;
             return false;
         }
 
-        public void update(GameTime gameTime , Sonichero _son, SoundEffect sound)
+        public void Update(GameTime gameTime)
         {
-            H = _son;
-            CheckCollision(H);
-            _Sound = sound;
+            CheckCollision();
         }
 
-        public void berekening(int _i)
-        {
-            i__ = _i;
-            if (Sonichero.Positie.Y > 950)
-            {
-                
-                _Sound.Play();
-                Sonichero.Positie = S.spawning;
-                
-                if (Game1.Hart != null)
-                {
-                    i__++;
-                    if (i__ < Game1.Hart.Count)
-                    {
-                        Game1.Hart.RemoveAt(i__ - 1);
-                    }
-                    else
-                        Environment.Exit(0);
-                }
-            }
-        }
+        
     }
 
 }

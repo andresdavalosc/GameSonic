@@ -13,30 +13,26 @@ namespace GameSonic
     /// </summary>
     public class Game1 : Game
     {
+        int wereld = 1;
         public Bediening _bediening { get; set; }
-        MenuManager m = new MenuManager();
         Timer tijd = new Timer();
-        SoundEffect _sound;
+        public static SoundEffect _sound;
         GraphicsDeviceManager graphics;
         CheckCollisionCoins checkcoin;
         CheckCollisionBlock checkblock;
         CheckCollionFlag checkFlag = new CheckCollionFlag();
-        World world = new World();
         public static SpriteFont font;
         SpriteBatch spriteBatch;
         public static Sonichero _sonic ;
         Vlag _flag;
-        Coins _Coin1, _Coin2, _Coin3;
         Levens Hart1, Hart2, Hart3;
         public static Texture2D hero1,flag;
         Texture2D sky;
-        Texture2D Coin,hearth;
-        Texture2D blokText;
-        Level level,level2;
-        SoundEffect effect;
-        SoundEffect coinseffect;
+        Texture2D hearth;
+        Level level;
+        public static SoundEffect effect;
+        public static SoundEffect coinseffect;
         Song song;
-        public Spawn S;
         public Sonichero status;
         public static List<ICollide> collideObjecten { get; set; } = new List<ICollide>();
         public static List<ICollide> _Coins { get; set; } = new List<ICollide>();
@@ -77,7 +73,6 @@ namespace GameSonic
         /// </summary>
         protected override void LoadContent()
         {
-            S = new Spawn();
             Collect.Content = Content;
             Helper.Content = Content;
             // Create a new SpriteBatch, which can be used to draw textures.
@@ -92,8 +87,8 @@ namespace GameSonic
             font = Content.Load<SpriteFont>("Font");
             MediaPlayer.Play(song);
             MediaPlayer.IsRepeating = true;
-            _sonic = new Sonichero(hero1, S.spawning);
-            _flag = new Vlag(flag, new Vector2(1650, 580));
+            _sonic = new Sonichero(hero1, Spawn.spawning);
+            _flag = new Vlag(flag, new Vector2(1650, 780));
             Hart1 = new Levens(hearth, new Vector2(5, 0));
             Hart2 = new Levens(hearth, new Vector2(37, 0));
             Hart3 = new Levens(hearth, new Vector2(74, 0));
@@ -110,9 +105,7 @@ namespace GameSonic
             level = new Level();
             checkcoin = new CheckCollisionCoins();
             checkblock = new CheckCollisionBlock();
-            level.texture = blokText;
-            //level.CreateWorld(world.Level1);
-            world.worlds(false);
+            World.Worlds(wereld);
             ScreenManager.Instance.GraphicsDevice = GraphicsDevice;
             ScreenManager.Instance.SpriteBatch = spriteBatch;
             ScreenManager.Instance.LoadContent(Content);
@@ -145,12 +138,12 @@ namespace GameSonic
             {
                     foreach (Coins C in _Coins)
                 {
-                    C.update(gameTime);
+                    C.Update(gameTime);
 
                 }
                 foreach (Blok B in _Blok)
                 {
-                    B.update();
+                    B.Update();
                 }
                 foreach (Levens H in Hart)
                 {
@@ -159,20 +152,16 @@ namespace GameSonic
                         H.Update();
                     }
                 }
-                checkFlag.update(_sonic);
-                checkblock.update(gameTime, _sonic,_sound);
-                checkcoin.update(gameTime, coinseffect);
+                checkFlag.Update(_sonic,spriteBatch);
+                checkblock.Update(gameTime);
+                checkcoin.Update(gameTime);
                 if (level != null)
                 {
                     Camera.Update(Sonichero.Positie);
-                }
-                else if (level2 != null)
-                {
-                    Camera.Update(Sonichero.Positie);
-                }
+                }               
                 if (MenuManager.start)
                 {
-                    tijd.Update(gameTime, _sound);
+                    tijd.Update(gameTime);
                 }
             }
             base.Update(gameTime);
@@ -199,7 +188,7 @@ namespace GameSonic
                 {
                     if (H != null)
                     {
-                        H.Draw(spriteBatch, font);
+                        H.Draw(spriteBatch);
                     }
                 }
                 level.DrawWorld(spriteBatch);
@@ -209,8 +198,7 @@ namespace GameSonic
             }
             if (Gepauzeerd.gepauzeerd)
             {
-                Gepauzeerd g = new Gepauzeerd();
-                g.Draw(spriteBatch);
+                Gepauzeerd.Draw(spriteBatch);
             }
             spriteBatch.End();
             base.Draw(gameTime);

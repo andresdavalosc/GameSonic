@@ -9,7 +9,7 @@ namespace GameSonic
 {
     public class Spawn
     {
-        public Vector2 spawning; 
+       public static Vector2 spawning; 
        public Spawn()
         {
             spawning = new Vector2(5, 500);

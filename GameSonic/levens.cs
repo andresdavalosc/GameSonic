@@ -14,7 +14,6 @@ namespace GameSonic
         private Texture2D _hart;
         public static Vector2 Positie;
         private Rectangle _ShowRect;
-        SpriteFont _font;
         public int count;
         public Bediening _bediening { get; set; }
 
@@ -35,11 +34,10 @@ namespace GameSonic
             
         }
 
-        public void Draw(SpriteBatch spriteBatch, SpriteFont font)
+        public void Draw(SpriteBatch spriteBatch)
         {
-            _font = font;
             spriteBatch.Draw(_hart, Positie, _ShowRect, Color.AliceBlue);
-            spriteBatch.DrawString(_font,count + "X:", new Vector2(Positie.X-35, 0), Color.Red);
+            spriteBatch.DrawString(Game1.font,count + "X:", new Vector2(Positie.X-35, 0), Color.Red);
 
         }
 

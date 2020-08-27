@@ -43,16 +43,16 @@ namespace GameSonic
         public MenuManager()
         {
             menu = new Menu();
-            menu.onMenuChange += menu_OnMenuChange;
+            menu.OnMenuChange += Menu_OnMenuChange;
         }
 
-        void menu_OnMenuChange(object sender, EventArgs e)
+        void Menu_OnMenuChange(object sender, EventArgs e)
         {
             XmlManager<Menu> xmlMenuManager = new XmlManager<Menu>();
             menu.UnloadContent();
             menu = xmlMenuManager.Load(menu.ID);
             menu.LoadContent();
-            menu.onMenuChange += menu_OnMenuChange;
+            menu.OnMenuChange += Menu_OnMenuChange;
             menu.Transistion(0.0f);
             foreach (MenuItem item in menu.Items)
             {
@@ -79,8 +79,11 @@ namespace GameSonic
                 if(menu.Items[menu.ItemNumber].LinkType == "Screen")
                 {
                     start = true;
-                    Console.WriteLine(start);
                     ScreenManager.Instance.ChangeScreens(menu.Items[menu.ItemNumber].LinkID);
+                }
+                else if (menu.Items[menu.ItemNumber].LinkType == "Stop")
+                {
+                    Environment.Exit(0);
                 }
                 else
                 {

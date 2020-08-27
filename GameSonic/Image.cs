@@ -17,7 +17,6 @@ namespace GameSonic
         public Vector2 Position, Scale;
         public Rectangle SourceRect;
         public bool IsActive;
-        public bool knop;
         [XmlIgnore]
         public Texture2D Texture;
         Vector2 origin;

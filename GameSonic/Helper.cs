@@ -16,8 +16,8 @@ namespace GameSonic
         public Texture2D Item1;
 
 
-        public abstract void update();
+        public abstract void Update();
 
-        public abstract void draw(SpriteBatch spriteBatch);
+        public abstract void Draw(SpriteBatch spriteBatch);
     }
 }

@@ -11,86 +11,22 @@ namespace GameSonic
 {
     public class Timer
     {
-        float T;
-        SpriteFont font;
-        SoundEffect _Sound;
-        public Levens L;
-        int count = 0;
-        CheckCollisionBlock aantalleven = new CheckCollisionBlock();
-        CheckCollisionCoins check = new CheckCollisionCoins();
-        String Bericht ="";
-        Level level1 = new Level();
-        World w = new World();
+        public static float T;
+        public static string Bericht = "";
 
 
-        public void Update(GameTime gameTime ,SoundEffect sound)
+        public void Update(GameTime gameTime)
         {
             T += (float)gameTime.ElapsedGameTime.TotalSeconds;
             Bericht = "tijd: " + T.ToString("0");
-            Console.WriteLine(check.Coinscount);
-            if( CheckCollionFlag.level == 1)
-            {
-                if (T >= 10 && CheckCollisionCoins.count < 10)
-                {
-                    count = aantalleven.i__;
-                    if (count < 3 && Game1.Hart != null)
-                    {
-                        Game1.Hart.RemoveAt(count + 1);
-                        T = 0;
-                        _Sound = sound;
-                        _Sound.Play();
-                    }
-                    else if (count >= 2)
-                    {
-                        Environment.Exit(0);
-                    }
-                    else if (Game1.Hart == null || count <= 0)
-                    {
-                        Console.WriteLine("done");
-                    }
-                }
-                else if (CheckCollisionCoins.count >= 10)
-                {
-                    Bericht = "Goed Bezig Je hebt meer dan 10 Coins !!";
-                }
-            }
-            if (CheckCollionFlag.level == 2)
-            {
-                CheckCollisionCoins.count = 0;
-                if (T >= 10 && CheckCollisionCoins.count < 20)
-                {
-                    count = aantalleven.i__;
-                    if (count < 3 || Game1.Hart != null)
-                    {
-                        Game1.Hart.RemoveAt(count + 1);
-                        T = 0;
-                        _Sound = sound;
-                        _Sound.Play();
-                    }
-                    else if (count >= 2)
-                    {
-                        Environment.Exit(0);
-                    }
-                    else if (Game1.Hart == null)
-                    {
-                        Environment.Exit(0);
-                    }
-                }
-                else if (CheckCollisionCoins.count >= 20)
-                {
-                    Bericht = "Goed Bezig Je hebt meer dan 20 Coins !!";
-                }
-            }
-
-
+            CheckTijd.Updater();
         }
 
         public void Draw(SpriteBatch spriteBatch , SpriteFont _font)
         {
-            font = _font;
-            //L = hart;
-
-            spriteBatch.DrawString(font, Bericht ,new Vector2(Levens.Positie.X + 500,20) , Color.White);
+            spriteBatch.DrawString(Game1.font, Bericht ,new Vector2(Levens.Positie.X + 500,20) , Color.White);
         }
+
+       
     }
 }

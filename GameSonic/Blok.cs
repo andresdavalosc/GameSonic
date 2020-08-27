@@ -12,12 +12,9 @@ namespace GameSonic
     class Blok : Helper,ICollide
     {
         public Rectangle CollisionRectangle;
-        public Rectangle R;
-
-        public Texture2D _texture { get; set; }
         public Rectangle Positie { get; set; }
 
-        public Blok(/*Texture2D texture, Vector2 pos*/ Rectangle R)
+        public Blok( Rectangle R)
         {
             Item1 = Content.Load<Texture2D>("blok");
             Positie = R;
@@ -26,12 +23,12 @@ namespace GameSonic
         }
         
 
-        public override void draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Item1, Positie, Color.White);
         }
 
-        public override void update()
+        public override void Update()
         {
         }
 

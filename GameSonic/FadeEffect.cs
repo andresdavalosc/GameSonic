@@ -30,6 +30,11 @@ namespace GameSonic
         public override void Update(GameTime gametime)
         {
             base.Update(gametime);
+            BerekeningFade(gametime);
+        }
+
+        public void BerekeningFade(GameTime gametime)
+        {
             if (image.IsActive)
             {
                 if (!Increase)
