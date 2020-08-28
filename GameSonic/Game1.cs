@@ -34,7 +34,7 @@ namespace GameSonic
         public static SoundEffect coinseffect;
         Song song;
         public Sonichero status;
-        public static List<ICollide> collideObjecten { get; set; } = new List<ICollide>();
+        public static List<ICollide> CollideObjecten { get; set; } = new List<ICollide>();
         public static List<ICollide> _Coins { get; set; } = new List<ICollide>();
         public static List<ICollide> _Blok { get; set; } = new List<ICollide>();
         public static List<ICollide> _vlag { get; set; } = new List<ICollide>();
@@ -96,11 +96,11 @@ namespace GameSonic
             
             //blokText = Content.Load<Texture2D>("blok");
             sky = Content.Load<Texture2D>("space");
-            collideObjecten = new List<ICollide>();
+            CollideObjecten = new List<ICollide>();
             Hart.Add(Hart1);
             Hart.Add(Hart2);
             Hart.Add(Hart3);
-            collideObjecten.Add(_sonic);
+            CollideObjecten.Add(_sonic);
             _vlag.Add(_flag);
             level = new Level();
             checkcoin = new CheckCollisionCoins();

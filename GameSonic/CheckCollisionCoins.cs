@@ -21,7 +21,7 @@ namespace GameSonic
             {
                 for (int j = i; j < Game1._Coins.Count; j++)
                 {
-                    if (Game1.collideObjecten[0].GetCollisionRectangle().Intersects(Game1._Coins[j].GetCollisionRectangle()))
+                    if (Game1.CollideObjecten[0].GetCollisionRectangle().Intersects(Game1._Coins[j].GetCollisionRectangle()))
                     {
                         VerwijderCoin.CoinsUpdate(j);
                         count++;

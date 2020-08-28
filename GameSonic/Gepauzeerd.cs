@@ -13,7 +13,7 @@ namespace GameSonic
         public static bool gepauzeerd = false;
         public static void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(Game1.font, "Pauze", new Vector2(Levens.Positie.X + 700, 20), Color.Yellow);
+            spriteBatch.DrawString(Game1.font, "Pauze", new Vector2(Levens.Positie.X + 700, 40), Color.Yellow);
         }
     }
 }

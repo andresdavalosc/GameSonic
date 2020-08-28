@@ -23,7 +23,7 @@ namespace GameSonic
             {
                 for (int j = i; j < Game1._vlag.Count; j++)
                 {
-                    if (Game1.collideObjecten[0].GetCollisionRectangle().Intersects(Game1._vlag[j].GetCollisionRectangle()))
+                    if (Game1.CollideObjecten[0].GetCollisionRectangle().Intersects(Game1._vlag[j].GetCollisionRectangle()))
                     {
 
                         ControleCoins.Coinsmax(spriteBatch);

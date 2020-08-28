@@ -20,7 +20,7 @@ namespace GameSonic
                 for (int j = i + 1; j < Game1._Blok.Count; j++)
                 {
 
-                    if (Game1.collideObjecten[0].GetCollisionRectangle().Intersects(Game1._Blok[i].GetCollisionRectangle()))
+                    if (Game1.CollideObjecten[0].GetCollisionRectangle().Intersects(Game1._Blok[i].GetCollisionRectangle()))
                     {
                         if (Game1._Blok[j].GetCollisionRectangle().Top > Game1._Blok[j].GetCollisionRectangle().Bottom && Game1._Blok[j].GetCollisionRectangle().Left < Game1._Blok[j].GetCollisionRectangle().Right)
                         {
